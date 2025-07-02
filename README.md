@@ -16,23 +16,25 @@
 
 ```
 .
-├── app.py                # FastAPI应用主文件
+
+└── main/              # API 测试脚本 (内置到镜像)
+    └── API_test_docker_task33.py
 ├── requirements.txt      # Python依赖
-├── Dockerfile           # Docker镜像构建文件
-├── docker-compose.yml   # Docker Compose配置
-├── test_api.py          # API测试脚本
+└── python/              # 辅助脚本 (内置到镜像)
+    ├── API_redio.py      # 视频流调用api测试
+    └── base_64.py        # base64图像请求api
+    ```
 ├── README.md            # 项目说明文档
-└── models/              # YOLO ONNX模型目录 (内置到镜像)
-    ├── scene1_model.onnx
-    ├── scene2_model.onnx
-    └── scene3_model.onnx
+└── onnx/              # YOLO ONNX模型目录 (内置到镜像)
+    ├── task33_best.onnx
+    └── task34_best.onnx
 ```
 
 ## 🛠️ 快速部署
 
 ### 前提条件
-- Docker >= 20.10
-- Docker Compose >= 1.29
+- Docker 
+- Docker Compose 
 
 ### 一键启动
 ```bash
@@ -40,13 +42,13 @@
 docker-compose up -d
 
 # 验证服务
-curl http://localhost:5000/
+curl http://localhost:30712/
 ```
 
 ## 📚 API接口
 
 ### 基础URL
-`http://localhost:5000`
+`http://localhost:30712`
 
 ### 主要接口
 
